@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(
   cors({
     //replace with deployed endpoint
-    origin: 'localhost:3000',
+    origin: 'https://peerprepg15.netlify.app',
     credentials: true,
   })
 );

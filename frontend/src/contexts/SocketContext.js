@@ -1,7 +1,9 @@
 import { createContext } from 'react';
 import io from 'socket.io-client';
 const LIVE_URL =
-  process.env.ENV === 'PROD' ? process.env.LIVE_URL : 'http://20.24.216.60';
+  process.env.ENV === 'PROD'
+    ? process.env.LIVE_URL
+    : 'https://080c-20-24-216-60.ap.ngrok.io';
 
 const matchingSocket = io(`${LIVE_URL}:8080`, {
   reconnection: true,

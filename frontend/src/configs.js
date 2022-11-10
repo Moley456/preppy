@@ -1,5 +1,7 @@
 const URI_GATEWAY =
-  process.env.ENV === 'PROD' ? process.env.URI_GATEWAY : 'http://20.24.216.60:8080';
+  process.env.ENV === 'PROD'
+    ? process.env.URI_GATEWAY
+    : 'https://080c-20-24-216-60.ap.ngrok.io';
 
 const PREFIX_USER_SVC = '/user';
 const PREFIX_MATCHING_SVC = '/matching';

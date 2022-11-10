@@ -16,7 +16,7 @@ import nodemailer from 'nodemailer';
 
 // need to separate orm functions from repository to decouple business logic from persistence
 const LIVE_URL =
-  process.env.ENV === 'PROD' ? process.env.LIVE_URL : 'http://localhost:3000';
+  process.env.ENV === 'PROD' ? process.env.LIVE_URL : 'https://peerprepg15.netlify.app';
 
 export const ormCreateUser = async (email, username, password) => {
   try {

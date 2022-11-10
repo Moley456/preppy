@@ -20,7 +20,7 @@ import cookieParser from 'cookie-parser';
 
 const app = express();
 const LIVE_URL =
-  process.env.ENV === 'PROD' ? process.env.LIVE_URL : 'http://localhost:3000';
+  process.env.ENV === 'PROD' ? process.env.LIVE_URL : 'https://peerprepg15.netlify.app';
 app.use(cookieParser());
 
 app.use(express.urlencoded({ extended: true }));

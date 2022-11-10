@@ -28,8 +28,8 @@ services:
     image: cs3219g15.azurecr.io/gateway
     volumes:
       - ./gateway:/home/node/app/gateway
-    ports:
-      - 8080:8080
+    expose:
+     - 8080
     restart: on-failure
     environment:
       <<: *common-backend-variables

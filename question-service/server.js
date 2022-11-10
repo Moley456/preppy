@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://peerprepg15.netlify.app',
     credentials: true,
   })
 ); // config cors so that front-end can use

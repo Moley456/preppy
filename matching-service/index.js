@@ -7,7 +7,7 @@ import { startServer } from './socket/socket-server.js';
 const app = express();
 var PORT = process.env.PORT || 8001;
 const LIVE_URL =
-  process.env.ENV === 'PROD' ? process.env.LIVE_URL : 'http://localhost:3000';
+  process.env.ENV === 'PROD' ? process.env.LIVE_URL : 'https://peerprepg15.netlify.app';
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
