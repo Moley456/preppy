@@ -19,7 +19,8 @@ import authenticate from './middleware/auth.js';
 import cookieParser from 'cookie-parser';
 
 const app = express();
-const LIVE_URL = process.env.ENV === 'PROD' ? process.env.LIVE_URL : 'localhost:3000';
+const LIVE_URL =
+  process.env.ENV === 'PROD' ? process.env.LIVE_URL : 'http://localhost:3000';
 app.use(cookieParser());
 
 app.use(express.urlencoded({ extended: true }));

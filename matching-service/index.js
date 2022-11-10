@@ -1,22 +1,23 @@
-import express from "express";
-import cors from "cors";
+import express from 'express';
+import cors from 'cors';
 // import morgan from 'morgan';
-import { createServer } from "http";
-import { startServer } from "./socket/socket-server.js";
+import { createServer } from 'http';
+import { startServer } from './socket/socket-server.js';
 
 const app = express();
 var PORT = process.env.PORT || 8001;
-const LIVE_URL = process.env.ENV  === "PROD" ? process.env.LIVE_URL : "http://localhost";
+const LIVE_URL =
+  process.env.ENV === 'PROD' ? process.env.LIVE_URL : 'http://localhost:3000';
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors()); // config cors so that front-end can use
-app.options("*", cors());
+app.options('*', cors());
 
 // app.use(morgan('combined'));
 
-app.get("/matching", (_, res) => {
-  res.send("Hello World from matching-service");
+app.get('/matching', (_, res) => {
+  res.send('Hello World from matching-service');
 });
 
 export const httpServer = createServer(app);
