@@ -1,6 +1,7 @@
 import { createContext } from 'react';
 import io from 'socket.io-client';
-const LIVE_URL = process.env.ENV === 'PROD' ? process.env.LIVE_URL : 'http://localhost';
+const LIVE_URL =
+  process.env.ENV === 'PROD' ? process.env.LIVE_URL : 'http://20.24.216.60';
 
 const matchingSocket = io(`${LIVE_URL}:8080`, {
   reconnection: true,

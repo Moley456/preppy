@@ -83,7 +83,7 @@ export const passwordLogin = async (req, res) => {
       res.cookie('token', userToken, {
         httpOnly: true,
         secure: true,
-        sameSite: 'strict',
+        sameSite: 'none',
         maxAge: 60 * 60 * 24 * 7 * 1000,
       });
       return res.status(200).json({ user: user, token: userToken });

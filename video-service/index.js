@@ -6,15 +6,15 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(
-    cors({
-      //replace with deployed endpoint
-      origin: 'http://localhost:3000',
-      credentials: true,
-    })
-  )
-app.options('*', cors())
+  cors({
+    //replace with deployed endpoint
+    origin: 'localhost:3000',
+    credentials: true,
+  })
+);
+app.options('*', cors());
 
-app.get('/video', (req, res) => res.send("Agora Auth Token Server"));
+app.get('/video', (req, res) => res.send('Agora Auth Token Server'));
 app.get('/video/rtctoken', generateAccessToken);
 
 const port = process.env.PORT || 8003;
