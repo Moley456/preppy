@@ -1,7 +1,5 @@
 const URI_GATEWAY =
-  process.env.ENV === 'PROD'
-    ? process.env.URI_GATEWAY
-    : 'https://080c-20-24-216-60.ap.ngrok.io';
+  process.env.ENV === 'PROD' ? process.env.URI_GATEWAY : 'https://api.peerprep.live';
 
 const PREFIX_USER_SVC = '/user';
 const PREFIX_MATCHING_SVC = '/matching';

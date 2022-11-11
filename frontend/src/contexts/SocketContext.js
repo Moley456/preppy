@@ -1,11 +1,9 @@
 import { createContext } from 'react';
 import io from 'socket.io-client';
 const LIVE_URL =
-  process.env.ENV === 'PROD'
-    ? process.env.LIVE_URL
-    : 'https://080c-20-24-216-60.ap.ngrok.io';
+  process.env.ENV === 'PROD' ? process.env.LIVE_URL : 'https://api.peerprep.live';
 
-const matchingSocket = io(`${LIVE_URL}:8080`, {
+const matchingSocket = io(`${LIVE_URL}`, {
   reconnection: true,
   reconnectionDelay: 1000,
   reconnectionDelayMax: 5000,
@@ -13,7 +11,7 @@ const matchingSocket = io(`${LIVE_URL}:8080`, {
   path: '/matching',
 });
 
-const codingSocket = io(`${LIVE_URL}:8080`, {
+const codingSocket = io(`${LIVE_URL}`, {
   reconnection: true,
   reconnectionDelay: 1000,
   reconnectionDelayMax: 5000,
@@ -21,7 +19,7 @@ const codingSocket = io(`${LIVE_URL}:8080`, {
   path: '/coding',
 });
 
-const roomSocket = io(`${LIVE_URL}:8080`, {
+const roomSocket = io(`${LIVE_URL}`, {
   reconnection: true,
   reconnectionDelay: 1000,
   reconnectionDelayMax: 5000,
